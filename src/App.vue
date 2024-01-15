@@ -1,26 +1,46 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="wrapper">
+  <header class="header">
+    <div class="header__title">
+      ARMAGEDDON 2023
+    </div>
+    <div class="header__text">ООО “Команда им. Б. Уиллиса”.
+Взрываем астероиды с 1998 года.</div>
+  </header>
+  <main class="main">
+    <div class="main__title">Ближайшие подлёты астероидов</div>
+    <div class="main__toggle">
+      <button>в километрах</button> |
+      <button>в лунных орбитах</button>
+    </div>
+    <div class="main__row">
+      <div class="row__items">
+        <div class="item">
+          <div class="item__title">12 сент 2023</div>
+          <div class="item__info"></div>
+          <div class="item__button"></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import axios from 'axios'
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  mounted () {
+    this.test()
+  },
+
+  methods: {
+    test () {
+      axios.get('https://api.nasa.gov/neo/rest/v1/feed?start_date=2024-01-01&end_date=2024-01-01&api_key=lxFg4mPZkaDYsADeWLV9KdiZQds7T9A8zVih7Yuk').then(response => console.log(response))
+    }
   }
 }
 </script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style lang="scss"></style>
