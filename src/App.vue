@@ -43,4 +43,44 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+@import 'assets/fonts.css';
+@import 'scss/reset.scss';
+:root{
+  --Black: #000;
+  --Orange-Base: #F86600;
+  --White-Base:#FFF;
+}
+
+.wrapper{
+  widows: 100%;
+  min-height: 100vh;
+  background-color: var(--Black);
+}
+
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.header__title{
+font-family: Passion One;
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+color: var(--Orange-Base);
+}
+
+.header__text{
+  color: var(--White-Base);
+font-family: Helvetica;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px;
+}
+
+</style>
