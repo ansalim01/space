@@ -18,16 +18,18 @@
             <div class="item">
               <div class="item__title">12 сент 2023</div>
               <div class="item__info">
-                <div class="item-info__distance">
-                  <div class="item-info__distance-text">3 лунные орбиты</div>
-                  <div class="item-info__distance-arr">
-                    <img src="" alt="">
+                <div class="item__distance">
+                  <div class="item__distance-text">3 лунные орбиты</div>
+                  <div class="item__distance-arr">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="129" height="6" viewBox="0 0 129 6" fill="none">
+                      <path d="M0 3L5 5.88675L5 0.113249L0 3ZM129 3.00001L124 0.113259L124 5.88676L129 3.00001ZM4.5 3.5L124.5 3.50001L124.5 2.50001L4.5 2.5L4.5 3.5Z" fill="white" fill-opacity="0.5"/>
+                    </svg>
                   </div>
                 </div>
-                <div class="item-info__img">
+                <div class="item__img">
                   <img src="./assets/pngegg 2.png">
                 </div>
-                <div class="item-info__size">
+                <div class="item__size">
                   2024FQ
                 </div>
               </div>
@@ -145,6 +147,34 @@ line-height: 36px; /* 128.571% */
   }
 }
 
+.item{
+  &__title{
+    color: var(--White-Base);
+
+    font-family: Helvetica;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 133.333% */
+  }
+
+  &__info{
+    display: flex;
+    justify-content: space-between;
+  }
+
+    &__distance{
+      &-text{
+        color: var(--White-Base);
+        text-align: center;
+        font-family: Helvetica;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+      }
+    }
+}
 .basket {
   position: fixed;
   bottom: 0;
