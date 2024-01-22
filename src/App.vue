@@ -10,8 +10,8 @@
       <main class="main">
         <div class="main__title">Ближайшие подлёты астероидов</div>
         <div class="main__toggle">
-          <div>в километрах</div> |
-          <div>в лунных орбитах</div>
+          <span class="main__toggle-not-active">в километрах</span> |
+          <span class="main__toggle-active">в лунных орбитах</span>
         </div>
         <div class="main__row">
           <div class="row__items">
@@ -35,12 +35,20 @@
             </div>
           </div>
         </div>
+        <div class="basket">
+        <div class="basket__information">
+          <div class="basket__title">Корзина</div>
+          2 астероида
+        </div>
+        <div class="basket__button">
+          Отправить
+        </div>
+      </div>
       </main>
     </div>
   <div class="bg-img">
     <img src="./assets/earth.jpeg" alt="">
   </div>
-
   </div>
 </template>
 
@@ -62,10 +70,11 @@ export default {
 <style lang="scss">
 @import 'assets/fonts.css';
 @import 'scss/reset.scss';
-:root{
+
+:root {
   --Black: #000;
   --Orange-Base: #F86600;
-  --White-Base:#FFF;
+  --White-Base: #FFF;
 }
 .bg-img{
   position: fixed;
@@ -91,22 +100,22 @@ export default {
   z-index: 1;
 }
 
-.header__title{
-font-family: Passion One;
-font-size: 32px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-color: var(--Orange-Base);
+.header__title {
+  font-family: Passion One;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--Orange-Base);
 }
 
-.header__text{
+.header__text {
   color: var(--White-Base);
-font-family: Helvetica;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 24px;
+  font-family: Helvetica;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
 }
 .main{
 padding: 17px 8px 0 56px;
@@ -121,4 +130,47 @@ font-weight: 700;
 line-height: 36px; /* 128.571% */
 }
 
+.main__toggle{
+  color: var(--White-Base);
+  font-family: Helvetica;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  &-active{
+    font-weight: 700;
+  }
+  &-not-active{
+    text-decoration-line: underline;
+  }
+}
+
+.basket {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background-color: #232526;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #FFF;
+  font-family: Helvetica;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+
+  &__title{
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+  }
+  &__button{
+    padding: 12px 16px;
+    border-radius: 40px;
+    background:  #F86600;
+  }
+}
 </style>
