@@ -29,11 +29,21 @@
                 <div class="item__img">
                   <img src="./assets/pngegg 2.png">
                 </div>
-                <div class="item__size">
-                  2024FQ
+                <div class="item__right">
+                  <div class="item__right-title">2024FQ</div>
+                  <div class="item__right-size">Ø 85 м</div>
                 </div>
               </div>
-              <div class="item__button"></div>
+              <div class="item__bottom">
+                <div class="item__bottom-button">заказать</div>
+                <div class="item__bottom-warning">
+                  <svg width="13px" height="13px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--fxemoji" preserveAspectRatio="xMidYMid meet">
+                    <path fill="#FFB636" d="M12.51 470.379L234.371 16.008c6.439-13.187 25.17-13.363 31.855-.299l232.51 454.371c6.064 11.849-2.542 25.92-15.853 25.92H28.512c-13.164 0-21.778-13.791-16.002-25.621z"></path>
+                    <path fill="#2B3B47" d="M284.332 173L272.15 336.498c-.911 12.233-11.567 21.411-23.8 20.499c-11.116-.828-19.706-9.707-20.499-20.499L215.668 173c-1.413-18.961 12.813-35.478 31.774-36.89s35.478 12.813 36.89 31.774c.124 1.662.109 3.5 0 5.116zM250 391.873c-17.432 0-31.564 14.131-31.564 31.564C218.436 440.869 232.568 455 250 455s31.564-14.131 31.564-31.564c0-17.432-14.132-31.563-31.564-31.563z"></path>
+                  </svg>
+                  Опасен
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -77,6 +87,8 @@ export default {
   --Black: #000;
   --Orange-Base: #F86600;
   --White-Base: #FFF;
+  --Orange-Smooth: rgba(248, 102, 0, 0.15);
+  --gray-30: #E3E5E5;
 }
 .bg-img{
   position: fixed;
@@ -94,7 +106,8 @@ export default {
   widows: 100%;
   min-height: 100vh;
   background-color: var(--Black);
-  padding: 16px;
+  padding: 16px 16px 96px 16px;
+
 }
 
 .content{
@@ -112,7 +125,7 @@ export default {
 }
 
 .header__text {
-  color: var(--White-Base);
+
   font-family: Helvetica;
   font-size: 16px;
   font-style: normal;
@@ -120,20 +133,19 @@ export default {
   line-height: 24px;
 }
 .main{
-padding: 17px 8px 0 56px;
+  padding: 17px 8px 0 56px;
 }
 
 .main__title{
-  color: var(--White-Base);
-font-family: Helvetica;
-font-size: 28px;
-font-style: normal;
-font-weight: 700;
-line-height: 36px; /* 128.571% */
+  font-family: Helvetica;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px; /* 128.571% */
 }
 
 .main__toggle{
-  color: var(--White-Base);
+
   font-family: Helvetica;
   font-size: 16px;
   font-style: normal;
@@ -149,7 +161,6 @@ line-height: 36px; /* 128.571% */
 
 .item{
   &__title{
-    color: var(--White-Base);
 
     font-family: Helvetica;
     font-size: 24px;
@@ -163,17 +174,58 @@ line-height: 36px; /* 128.571% */
     justify-content: space-between;
   }
 
-    &__distance{
+  &__distance{
       &-text{
-        color: var(--White-Base);
         text-align: center;
-        font-family: Helvetica;
         font-size: 16px;
-        font-style: normal;
         font-weight: 400;
         line-height: 24px; /* 150% */
       }
+  }
+  &__right {
+    // display: flex;
+    &-title {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px; /* 150% */
+      text-decoration-line: underline;
     }
+    &-size {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px; /* 133.333% */
+    }
+  }
+&__bottom{
+  display: flex;
+  gap: 10px;
+  &-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 11px;
+    border-radius: 16px;
+    background: var(--Orange-Smooth);
+
+    color: var(--Orange-Base);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 20px; /* 181.818% */
+  }
+
+  &-warning {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    color: var(--gray-30);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+  }
+
+}
+
 }
 .basket {
   position: fixed;
